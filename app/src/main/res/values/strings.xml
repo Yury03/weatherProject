@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">weatherProject</string>
     <string name="changeCity">Сменить город</string>
+    <string name="enterCity">Найти город</string>
+    <string name="textHintFindCity">Введите город</string>
+    <string name="back">Назад</string>
 </resources>
