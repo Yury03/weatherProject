@@ -6,5 +6,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".city">
-
+    <EditText
+            android:layout_width="240dp"
+            android:layout_height="62dp"
+            android:inputType="textPersonName"
+            android:text="Введите город"
+            android:ems="10"
+            android:id="@+id/editTextTextPersonName"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="100dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="24dp" android:layout_marginEnd="24dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
