@@ -4,4 +4,6 @@
     <string name="enterCity">Найти город</string>
     <string name="textHintFindCity">Введите город</string>
     <string name="back">Назад</string>
+    <string name="cityNotChanged">Город не выбран</string>
+    <string name="noUserInput">Введите город!</string>
 </resources>
