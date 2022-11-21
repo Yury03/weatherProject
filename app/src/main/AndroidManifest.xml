@@ -3,8 +3,14 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.example.weatherproject">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <permission
+            android:name="MainActivity.permission.START_ACTIVITY"
+            android:label="Start my Activity"
+            android:protectionLevel="normal"
+            android:description="@string/app_name">
+    </permission>
     <application
             android:allowBackup="true"
             android:dataExtractionRules="@xml/data_extraction_rules"

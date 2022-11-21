@@ -19,6 +19,7 @@ public class city extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city);
         chCityBut=findViewById(R.id.butChangeCity);
+        cityVar="-";
         //CityText=findViewById(R.id.editTextCity);
 
     }
@@ -29,13 +30,16 @@ public class city extends AppCompatActivity {
         if(cityVar.trim().equals("")){
             Toast.makeText(city.this, R.string.noUserInput, Toast.LENGTH_LONG).show();
         }else{
+            cityVar=cityVar.trim();
             finishThisActivity(chCityBut);
         }
 
     }
     public void finishThisActivity(View view){
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("cityVar", cityVar);
+        if(!cityVar.equals("-")){
+            intent.putExtra("cityVar", cityVar);
+        }
         startActivity(intent);
         overridePendingTransition(R.anim.right_in, R.anim.right_out);
         finish();
