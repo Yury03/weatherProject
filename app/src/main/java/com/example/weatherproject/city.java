@@ -20,13 +20,10 @@ public class city extends AppCompatActivity {
         setContentView(R.layout.activity_city);
         chCityBut=findViewById(R.id.butChangeCity);
         cityVar="-";
-        //CityText=findViewById(R.id.editTextCity);
-
     }
     public void findCityBut(View view){
         EditText editTextCity = findViewById(R.id.editTextCity);
         cityVar = editTextCity.getText().toString();
-        //if(CityText.getText().toString().trim().equals("")){
         if(cityVar.trim().equals("")){
             Toast.makeText(city.this, R.string.noUserInput, Toast.LENGTH_LONG).show();
         }else{

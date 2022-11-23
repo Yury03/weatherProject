@@ -1,12 +1,15 @@
 
 package com.example.weatherproject;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,19 +22,41 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    private Button changeCity;
     TextView textView;
+    String defaultCity;
     TextView nameTextView;
+    public static final String APP_CITY = "CITY";
+
+    String cityVar;
+    SharedPreferences sp;
+
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        sp = getSharedPreferences(APP_CITY, Context.MODE_PRIVATE);
+        cityVar = sp.getString(APP_CITY, String.valueOf(R.string.cityNotChanged));
+
+        //Toast.makeText(this, cityVar, Toast.LENGTH_LONG).show();
+
         textView = findViewById(R.id.textView);
         nameTextView=findViewById(R.id.textView2);
+
         Bundle arguments = getIntent().getExtras();
         if (arguments != null) {
-            String cityVar = arguments.get("cityVar").toString();
+            cityVar = arguments.get("cityVar").toString();
+            textView.setText("Город: " + cityVar);
+            String api = "188293f79c0695b76bd873ec916a0f2f";
+            String url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityVar + "&appid=" + api + "&units=metric&lang=ru";
+            new getData().execute(url);
+            SharedPreferences.Editor e = sp.edit();
+            e.putString(APP_CITY, cityVar);
+            e.commit();
+        }else if (!cityVar.equals(String.valueOf(R.string.cityNotChanged))){
             textView.setText("Город: " + cityVar);
             String api = "188293f79c0695b76bd873ec916a0f2f";
             String url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityVar + "&appid=" + api + "&units=metric&lang=ru";
@@ -51,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            nameTextView.setText("Ожидайте");
+            nameTextView.setText("Ожидайте...");
         }
 
         @Override
@@ -67,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 reader = new BufferedReader(new InputStreamReader(stream));
 
                 StringBuffer buffer = new StringBuffer();
-                String line = "";
+                String line;
                 while ((line = reader.readLine()) != null) {
                     buffer.append(line).append(("\n"));
                 }
@@ -95,12 +120,18 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             try {
-                JSONObject jsonObject=new JSONObject(s);
-                nameTextView.setText("Температура: "+jsonObject.getJSONObject("main").getDouble("temp"));
+                JSONObject jsonObject = new JSONObject(s);
+                nameTextView.setText("Температура: " + jsonObject.getJSONObject("main").getDouble("temp"));
+                //nameTextView.setText(s);
             } catch (JSONException e) {
                 throw new RuntimeException(e);
             }
-            //nameTextView.setText(s);
+
         }
+    }
+    protected void onStop() {
+        super.onStop();
+        //SharedPreferences.Editor e = sp.edit();
+         // не забудьте подтвердить изменения
     }
 }
