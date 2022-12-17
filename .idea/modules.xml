@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/My Application.iml" filepath="$PROJECT_DIR$/.idea/modules/My Application.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/weatherProject.iml" filepath="$PROJECT_DIR$/.idea/modules/weatherProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/weatherProject.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/weatherProject.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/weatherProject.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/weatherProject.app.androidTest.iml" />

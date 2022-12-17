@@ -18,7 +18,7 @@ public class city extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city);
-        chCityBut=findViewById(R.id.butChangeCity);
+        chCityBut=findViewById(R.id.button);
         cityVar="-";
     }
     public void findCityBut(View view){

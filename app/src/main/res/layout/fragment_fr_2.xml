@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--             xmlns:tools="http://schemas.android.com/tools"-->
+<!--             android:layout_width="match_parent"-->
+<!--             android:layout_height="match_parent"-->
+<!--             tools:context=".fr_2">-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+    <ImageView android:id="@+id/rectangle_"
+               android:src="@drawable/rectangle_2"
+               android:contentDescription="rectangle_2"
+               android:layout_width="match_parent"
+               android:layout_height="200dp"
+               android:layout_marginTop="0dp"
+    />
+    <RelativeLayout android:id="@+id/fr_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+        <RelativeLayout android:id="@+id/_______"
+                        android:layout_width="373dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true" android:layout_marginBottom="68dp"
+                        android:layout_toEndOf="@+id/space" android:layout_marginStart="0dp">
+
+
+            <TextView android:id="@+id/_3"
+                      android:layout_gravity="center_horizontal|center"
+                      android:gravity="center"
+                      android:textSize="15sp"
+                      android:textColor="@color/uv_index_color"
+                      android:layout_marginLeft="189dp"
+                      android:layout_marginTop="16dp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+
+                      android:layout_marginEnd="10dp"
+                      android:layout_below="@+id/_5_m_s" android:text="@string/noData"
+                      android:layout_alignParentEnd="true"/>
+            <TextView android:id="@+id/_5_m_s"
+                      android:layout_gravity="center_vertical|end"
+                      android:gravity="end"
+                      android:textSize="15sp"
+                      android:textColor="@color/uv_index_color"
+                      android:layout_marginLeft="164dp"
+                      android:layout_marginTop="16dp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/noData"
+                      android:layout_below="@+id/_5_km" android:layout_alignParentEnd="true"
+                      android:layout_marginEnd="10dp"/>
+            <TextView android:id="@+id/__10_"
+                      android:layout_gravity="center_horizontal|center"
+                      android:gravity="center"
+                      android:textSize="15sp"
+                      android:textColor="@color/uv_index_color"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_alignParentEnd="true" android:layout_marginEnd="225dp"
+                      android:layout_alignParentTop="true" android:text="@string/noData"/>
+            <TextView android:id="@+id/_98_"
+                      android:layout_gravity="center_horizontal|center"
+                      android:gravity="center"
+                      android:textSize="15sp"
+                      android:textColor="@color/uv_index_color"
+                      android:layout_marginTop="16dp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginEnd="225dp"
+                      android:layout_below="@+id/_5_"
+                      android:layout_alignParentEnd="true" android:text="@string/noData"/>
+            <TextView android:id="@+id/_5_"
+                      android:layout_gravity="center_horizontal|center"
+                      android:gravity="center"
+                      android:textSize="15sp"
+                      android:textColor="@color/uv_index_color"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginEnd="225dp"
+                      android:layout_marginTop="16dp"
+                      android:layout_below="@+id/__10_" android:layout_alignParentEnd="true"
+                      android:text="@string/noData"/>
+            <TextView android:id="@+id/_5_km"
+                      android:layout_gravity="center_horizontal|center"
+                      android:gravity="center"
+                      android:textSize="15sp"
+                      android:textColor="@color/uv_index_color"
+                      android:layout_marginLeft="167dp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/noData"
+                      android:layout_marginStart="161dp"
+                      android:layout_alignParentTop="true" android:layout_alignParentEnd="true"
+                      android:layout_marginEnd="10dp"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/_________"
+                                                               android:layout_marginTop="16dp"
+                                                               android:layout_marginStart="190dp"
+                                                               android:layout_width="wrap_content"
+                                                               android:layout_height="wrap_content"
+                                                               android:layout_alignParentStart="true"
+                                                               android:layout_below="@+id/_____">
+
+                <TextView android:id="@+id/uv_index"
+                          android:gravity="center"
+                          android:textSize="15sp"
+                          android:textColor="@color/uv_index_color"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/uv_index_string"
+                          android:layout_marginStart="5dp"
+                          app:layout_constraintStart_toEndOf="@+id/vector"
+                          app:layout_constraintTop_toTopOf="parent"
+                          app:layout_constraintBottom_toBottomOf="parent"
+                />
+                <ImageView android:id="@+id/vector"
+                           android:src="@drawable/uvindex"
+                           android:contentDescription="vector"
+                           android:layout_width="21dp"
+                           android:layout_height="21dp" app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintEnd_toStartOf="@+id/uv_index"
+                />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/_____"
+                                                               android:layout_marginTop="16dp"
+                                                               android:layout_marginStart="190dp"
+                                                               android:layout_width="wrap_content"
+                                                               android:layout_height="wrap_content"
+                                                               android:layout_alignParentStart="true"
+                                                               android:layout_below="@+id/__________ek1">
+
+                <ImageView android:id="@+id/vector_ek1"
+                           android:src="@drawable/vector_ek1wind"
+                           android:contentDescription="vector_ek1"
+                           android:layout_width="21dp"
+                           android:layout_height="21dp"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                />
+
+                <TextView android:id="@+id/wind"
+                          android:gravity="center"
+                          android:textSize="15sp"
+                          android:textColor="@color/uv_index_color"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/wind_string"
+                          app:layout_constraintStart_toEndOf="@+id/vector_ek1"
+                          android:layout_marginStart="5dp"
+                          app:layout_constraintTop_toTopOf="parent"
+                          app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/__________ek1"
+                                                               android:layout_marginTop="0dp"
+                                                               android:layout_marginStart="190dp"
+                                                               android:layout_width="wrap_content"
+                                                               android:layout_height="wrap_content"
+                                                               android:layout_alignStart="@+id/______________ek1">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/show"
+                                                                   android:layout_width="wrap_content"
+                                                                   android:layout_height="wrap_content"
+                                                                   app:layout_constraintStart_toStartOf="parent"
+                                                                   app:layout_constraintTop_toTopOf="parent"
+                                                                   app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                    <ImageView android:id="@+id/vector_ek2"
+                               android:src="@drawable/vis1"
+                               android:contentDescription="vector_ek2"
+                               android:layout_width="21dp"
+                               android:layout_height="13.4dp" app:layout_constraintTop_toTopOf="parent"
+                               app:layout_constraintBottom_toBottomOf="parent"
+                               app:layout_constraintStart_toStartOf="parent"
+                               app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <ImageView android:id="@+id/vector_ek3"
+                               android:src="@drawable/vis0"
+                               android:contentDescription="vector_ek3(1)"
+                               android:layout_width="9.15dp"
+                               android:layout_height="9.15dp"
+                               app:layout_constraintStart_toStartOf="parent"
+                               app:layout_constraintTop_toTopOf="parent"
+                               app:layout_constraintEnd_toEndOf="parent"
+                               app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView android:id="@+id/visibility"
+                          android:gravity="center"
+                          android:textSize="15sp"
+                          android:textColor="@color/uv_index_color"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/visibility_string"
+                          app:layout_constraintTop_toTopOf="parent"
+                          app:layout_constraintBottom_toBottomOf="parent"
+                          android:layout_marginStart="5dp" app:layout_constraintStart_toEndOf="@+id/show"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/__________ek2"
+                                                               android:layout_marginTop="15dp"
+                                                               android:layout_marginStart="2dp"
+                                                               android:layout_width="wrap_content"
+                                                               android:layout_height="wrap_content"
+                                                               android:layout_below="@+id/_____________">
+
+                <TextView android:id="@+id/humidity"
+                          android:gravity="center"
+                          android:textSize="15sp"
+                          android:textColor="@color/uv_index_color"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/humidity_string"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toEndOf="@+id/vector_ek5"
+                          android:layout_marginStart="8dp" app:layout_constraintTop_toTopOf="parent"
+                          app:layout_constraintBottom_toBottomOf="parent"
+                />
+                <ImageView android:id="@+id/vector_ek5"
+                           android:src="@drawable/humidity"
+                           android:contentDescription="vector_ek5"
+                           android:layout_width="14dp"
+                           android:layout_height="21dp" app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+                <ImageView android:id="@+id/vector_ek6"
+                           android:src="@drawable/humidity1"
+                           android:contentDescription="vector_ek6"
+                           android:layout_width="4dp"
+                           android:layout_height="4dp"
+                           app:layout_constraintEnd_toEndOf="@+id/vector_ek5"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           android:layout_marginBottom="4dp" android:layout_marginEnd="3dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/_____________"
+                                                               android:layout_marginTop="15dp"
+                                                               android:layout_marginStart="0dp"
+                                                               android:layout_width="wrap_content"
+                                                               android:layout_height="wrap_content"
+                                                               android:layout_below="@+id/______________ek1">
+
+                <TextView android:id="@+id/rain_chance"
+                          android:textSize="15sp"
+                          android:textColor="@color/uv_index_color"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/rain_chance_string"
+                          app:layout_constraintStart_toEndOf="@+id/vector_ek7"
+                          app:layout_constraintTop_toTopOf="parent"
+                          app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="5dp"/>
+
+                <ImageView android:id="@+id/vector_ek7"
+                           android:src="@drawable/rainchance"
+                           android:contentDescription="vector_ek7(1)"
+                           android:layout_width="17dp"
+                           android:layout_height="15dp" app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/______________ek1"
+                                                               android:layout_marginTop="2dp"
+                                                               android:layout_marginStart="2dp"
+                                                               android:layout_width="wrap_content"
+                                                               android:layout_height="wrap_content"
+            >
+
+                <TextView android:id="@+id/feels_like"
+                          android:gravity="center"
+                          android:textSize="15sp"
+                          android:textColor="@color/uv_index_color"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/feels_like_string"
+                          app:layout_constraintStart_toEndOf="@+id/vector_ek8"
+                          app:layout_constraintTop_toTopOf="parent"
+                          app:layout_constraintBottom_toBottomOf="parent"
+                          android:layout_marginBottom="1dp" android:layout_marginStart="9dp"/>
+
+                <ImageView android:id="@+id/vector_ek8"
+                           android:src="@drawable/feels"
+                           android:contentDescription="vector_ek8"
+                           android:layout_width="11dp"
+                           android:layout_height="21dp" app:layout_constraintTop_toTopOf="parent"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+        <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:id="@+id/space"/>
+
+    </RelativeLayout>
+</RelativeLayout>
+
+        <!--</FrameLayout>-->
+
