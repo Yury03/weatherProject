@@ -2,17 +2,14 @@ package com.example.weatherproject;
 //188293f79c0695b76bd873ec916a0f2f api ключ
 import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class city extends AppCompatActivity {
     String cityVar;
-    Button chCityBut;
+    ImageButton chCityBut;
     //EditText CityText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

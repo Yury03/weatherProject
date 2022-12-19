@@ -21,7 +21,6 @@ public class fr_2 extends Fragment {
     TextView visibility;
     TextView wind;
     TextView uvIndex;
-    //TextView uvIndex;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -36,16 +35,29 @@ public class fr_2 extends Fragment {
         try {
             JSONObject jsonObj = new JSONObject(bundle.getString("identifier"));
             int cod = jsonObj.getInt("cod");
-            if(cod==200) {
-                feels.setText(String.valueOf((int) jsonObj.getJSONObject("main").getDouble("feels_like")));
+            if (cod == 200) {
+                int feelsLike = (int) jsonObj.getJSONObject("main").getDouble("feels_like");
+                if (feelsLike > 0) {
+                    feels.setText("+" + String.valueOf(feelsLike));
+                }else {
+                    feels.setText(String.valueOf(feelsLike));
+                }
                 rainChance.setText("-");
                 humidity.setText((int) jsonObj.getJSONObject("main").getDouble("humidity") + " %");
                 double vis = (jsonObj.getInt("visibility")) / 1000.0;
                 String visResult = String.format("%.1f", vis);
                 visibility.setText(visResult + " км");
-                wind.setText("-");
+                double win = jsonObj.getJSONObject("wind").getDouble("speed");
+                String winResult = String.format("%.1f", win);
+                wind.setText(winResult + " м/с");
                 uvIndex.setText("-");
             }
+//            else {
+//                TextView textView = view.getRootView().findViewById(R.id.discrip);
+//                TextView citytext = view.getRootView().findViewById(R.id.cityText);
+//                textView.setText(R.string.noNetwork);
+//                citytext.setText("");
+//            }
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
@@ -54,7 +66,6 @@ public class fr_2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //View view = inflater.inflate(R.layout.fragment_fr_2, container, false);
         return inflater.inflate(R.layout.fragment_fr_2, container, false);
     }
 }
