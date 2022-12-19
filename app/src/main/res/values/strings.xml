@@ -1,3 +1,33 @@
 <resources>
-    <string name="app_name">weatherProject</string>
+    <string name="app_name">weatherApp</string>
+    <string name="changeCity">Сменить город</string>
+    <string name="enterCity">Найти город</string>
+    <string name="textHintFindCity">Введите город</string>
+    <string name="back">Назад</string>
+    <string name="cityNotChanged">ГОРОД НЕ ВЫБРАН</string>
+    <string name="noUserInput">Введите город!</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="rainy_string">RAINY</string>
+    <string name="moscow__russia_string">Moscow, Russia</string>
+    <string name="day1">Пн</string>
+    <string name="day2">Вт</string>
+    <string name="day3">Ср</string>
+    <string name="day4">Чт</string>
+    <string name="day5">Пт</string>
+    <string name="day6">Сб</string>
+    <string name="day7">Вс</string>
+    <string name="__10__ek1_string">-10</string>
+    <string name="__10__ek2_string">-12</string>
+    <string name="__10__ek3_string">-14</string>
+    <string name="__10__ek4_string">-11</string>
+    <string name="__10__ek5_string">-12</string>
+    <string name="uv_index_string">УФ индекс</string>
+    <string name="wind_string">Ветер</string>
+    <string name="visibility_string">Видимость</string>
+    <string name="humidity_string">Влажность</string>
+    <string name="rain_chance_string">Шанс дождя</string>
+    <string name="feels_like_string">Ощущается</string>
+    <string name="noData">-</string>
+    <string name="noNetwork">ПРОВЕРЬТЕ ПОДКЛЮЧЕНИЕ\nК СЕТИ</string>
+
 </resources>
