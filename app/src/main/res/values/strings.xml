@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">weatherProject</string>
+    <string name="app_name">weatherApp</string>
     <string name="changeCity">Сменить город</string>
     <string name="enterCity">Найти город</string>
     <string name="textHintFindCity">Введите город</string>
@@ -17,10 +17,10 @@
     <string name="day6">Сб</string>
     <string name="day7">Вс</string>
     <string name="__10__ek1_string">-10</string>
-    <string name="__10__ek2_string">-10</string>
-    <string name="__10__ek3_string">-10</string>
-    <string name="__10__ek4_string">-10</string>
-    <string name="__10__ek5_string">-10</string>
+    <string name="__10__ek2_string">-12</string>
+    <string name="__10__ek3_string">-14</string>
+    <string name="__10__ek4_string">-11</string>
+    <string name="__10__ek5_string">-12</string>
     <string name="uv_index_string">УФ индекс</string>
     <string name="wind_string">Ветер</string>
     <string name="visibility_string">Видимость</string>
@@ -28,7 +28,6 @@
     <string name="rain_chance_string">Шанс дождя</string>
     <string name="feels_like_string">Ощущается</string>
     <string name="noData">-</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="noNetwork">ПРОВЕРЬТЕ ПОДКЛЮЧЕНИЕ\nК СЕТИ</string>
 
 </resources>

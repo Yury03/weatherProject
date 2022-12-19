@@ -52,12 +52,6 @@ public class fr_2 extends Fragment {
                 wind.setText(winResult + " м/с");
                 uvIndex.setText("-");
             }
-//            else {
-//                TextView textView = view.getRootView().findViewById(R.id.discrip);
-//                TextView citytext = view.getRootView().findViewById(R.id.cityText);
-//                textView.setText(R.string.noNetwork);
-//                citytext.setText("");
-//            }
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }

@@ -59,28 +59,39 @@ public class MainActivity extends AppCompatActivity {
         leftButton = findViewById(R.id.butLeft);
         rightButton = findViewById(R.id.butRight);
         Bundle arguments = getIntent().getExtras();
-        if (arguments != null) {//запуск активити с аргументами
+        if (arguments != null) {//запуск активити с аргументами, принятыми из другой активити
             cityVar = arguments.get("cityVar").toString();
             cityText.setText(cityVar);
-            String api = "188293f79c0695b76bd873ec916a0f2f";
-            String url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityVar + "&appid=" + api + "&units=metric&lang=ru";
-            new getData().execute(url);
+            if (isOnline()) {
+                String api = "188293f79c0695b76bd873ec916a0f2f";
+                String url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityVar + "&appid=" + api + "&units=metric&lang=ru";
+                new getData().execute(url);
+            } else {
+                discrip.setText(R.string.noNetwork);
+            }
             SharedPreferences.Editor e = sp.edit();
             e.putString(APP_CITY, cityVar);
             e.commit();
-        } else if (!cityVar.equals(String.valueOf(R.string.cityNotChanged))) {//запуск активити без аргумента, с сохранными настройками
+        } else if (!cityVar.equals(R.string.cityNotChanged)) {//запуск активити без аргумента, с сохранными настройками
             cityText.setText(cityVar);
-            String api = "188293f79c0695b76bd873ec916a0f2f";
-            String url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityVar + "&appid=" + api + "&units=metric&lang=ru";
-            new getData().execute(url);
-        }
-//        else{//запуск активити без аргументов и без настроек
-//            cityText.setText(R.string.cityNotChanged);
-//            leftButton.setVisibility(View.INVISIBLE);
-//            rightButton.setVisibility(View.INVISIBLE);
-//        }
+            if (isOnline()) {
+                String api = "188293f79c0695b76bd873ec916a0f2f";
+                String url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityVar + "&appid=" + api + "&units=metric&lang=ru";
+                new getData().execute(url);
+            } else {
+                discrip.setText(R.string.noNetwork);
+            }
+        } else {//запуск активити без аргументов и без настроек
+            cityText.setText(R.string.cityNotChanged);
+            leftButton.setVisibility(View.INVISIBLE);
+            rightButton.setVisibility(View.INVISIBLE);
+            discrip.setText("");
+            temp.setText("");
             b = new Bundle();
             b.putString("identifier", "{\"cod\":\"404\"}");
+            changeFr(leftButton);
+
+        }
     }
 
     public void changeFr(View view) {
@@ -106,25 +117,18 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
         finish();
     }
-    public static boolean hasConnection(final Context context)
-    {
-        ConnectivityManager cm = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo wifiInfo = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        if (wifiInfo != null && wifiInfo.isConnected())
-        {
-            return true;
+
+    protected boolean isOnline() {
+        boolean online = false;
+        String cs = Context.CONNECTIVITY_SERVICE;
+        ConnectivityManager cm = (ConnectivityManager)
+                getSystemService(cs);
+        if (cm.getActiveNetworkInfo() == null) {
+            online = false;
+        } else {
+            online = true;
         }
-        wifiInfo = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-        if (wifiInfo != null && wifiInfo.isConnected())
-        {
-            return true;
-        }
-        wifiInfo = cm.getActiveNetworkInfo();
-        if (wifiInfo != null && wifiInfo.isConnected())
-        {
-            return true;
-        }
-        return false;
+        return online;
     }
 
     private class getData extends AsyncTask<String, String, String> {
@@ -183,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
                 int cod = jsonObject.getInt("cod");
                 if (cod == 200) {
                     String descrip = jsonObject.getJSONArray("weather").getJSONObject(0).getString("description");
-                    descrip=descrip.toUpperCase();
+                    descrip = descrip.toUpperCase();
                     discrip.setText(descrip);
                     double t = jsonObject.getJSONObject("main").getDouble("temp");
                     String icon = jsonObject.getJSONArray("weather").getJSONObject(0).getString("icon");
@@ -200,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
                         case "04":
                             if (t < 0) {
                                 imageView.setImageResource(R.drawable.snow2_1);
-                            }else {
+                            } else {
                                 imageView.setImageResource(R.drawable.snow4);
                             }
                             break;
@@ -214,20 +218,20 @@ public class MainActivity extends AppCompatActivity {
                             imageView.setImageResource(R.drawable.thunderstormday);
                             break;
                         case "50":
-                            if(t<0){
+                            if (t < 0) {
                                 imageView.setImageResource(R.drawable.snow33);
-                            }else{
+                            } else {
                                 imageView.setImageResource(R.drawable.snow33);
                             }
                             break;
                     }
-                    if(t>0){
-                        temp.setText("+"+String.valueOf((int)t) + "\u00B0C");
-                    }else{
-                        temp.setText(String.valueOf((int) t));
+                    if (t > 0) {
+                        temp.setText("+" + String.valueOf((int) t) + "\u00B0C");
+                    } else {
+                        temp.setText(String.valueOf((int) t)+ "\u00B0C");
                     }
                     cityText.setText(cityVar);
-                } else if(cod==404) {
+                } else if (cod == 404) {
                     cityText.setText("Somewhere Nowhere");
                     discrip.setText("SORRY\nCITY NOT FOUND");
                     temp.setText("");
