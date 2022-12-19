@@ -80,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
                 new getData().execute(url);
             } else {
                 discrip.setText(R.string.noNetwork);
+                cityText.setText("");
+                temp.setText("");
+                leftButton.setVisibility(View.INVISIBLE);
+                rightButton.setVisibility(View.INVISIBLE);
             }
         } else {//запуск активити без аргументов и без настроек
             cityText.setText(R.string.cityNotChanged);
